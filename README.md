@@ -18,9 +18,11 @@ projects living on your subdomains:
 index.html    the whole page
 styles.css    design system (colors + fonts are CSS variables at the top)
 script.js     theme toggle + reveal-on-scroll (page works fine without JS)
+screenshots/  hero shots of each project site (shown on the project cards)
 favicon.svg   RT monogram
 404.html      custom not-found page
 robots.txt / sitemap.xml
+CNAME         pins the GitHub Pages custom domain
 ```
 
 ## Preview locally
@@ -44,6 +46,17 @@ URL, description, tags, and the small SVG glyph.
 **Change colors** — edit the CSS variables at the top of `styles.css`
 (`--accent` is the single brand color; the light and dark palettes are separate
 variable blocks).
+
+**Refresh a project screenshot** — capture the site's hero at a 16:10 viewport, e.g.:
+
+```sh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \
+  --virtual-time-budget=12000 --window-size=1280,800 \
+  --screenshot=screenshots/tower.png https://tower.rahultrikha.com/
+sips -s format jpeg -s formatOptions 78 -Z 1440 screenshots/tower.png --out screenshots/tower.jpg
+rm screenshots/tower.png
+```
 
 **Add a photo** — drop an image (e.g. `photo.jpg`) into this folder and uncomment
 the `<img class="avatar">` line in the hero section of `index.html`.

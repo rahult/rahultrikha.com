@@ -306,13 +306,31 @@ h2 em { font-style: italic; }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 26px 26px 24px;
+  padding: 0;
+  overflow: hidden;
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow);
   border-color: var(--line-strong);
+}
+
+.card-media {
+  display: block;
+}
+.card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.card-body {
+  padding: 22px 24px 24px;
 }
 
 .card-top {
